@@ -1,0 +1,35 @@
+name: Daily Job Scraper
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Runs every day at 6AM UTC (7AM WAT)
+  workflow_dispatch:       # Allows manual trigger from GitHub UI
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scraper
+        env:
+          RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
+        run: python scraper.py
+
+      - name: Commit and push updated jobs file
+        run: |
+          git config --global user.name "CloudOps Bot"
+          git config --global user.email "bot@cloudops.academy"
+          git add devops_jobs.json
+          git diff --staged --quiet || git commit -m "🤖 Daily job scrape - $(date +'%Y-%m-%d')"
+          git push
