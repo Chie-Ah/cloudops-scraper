@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CloudOps Community – Job Board</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #13131a;
+      --card: #1a1a24;
+      --border: #2a2a38;
+      --accent: #7c5cfc;
+      --accent2: #00e5b0;
+      --wa: #25D366;
+      --wa-dark: #1aaa52;
+      --text: #f0f0f5;
+      --muted: #7a7a9a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 48px 40px 32px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, #0d0d18 0%, transparent 100%);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo-area h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .logo-area h1 span { color: var(--wa); }
+    .logo-area p { color: var(--muted); margin-top: 6px; font-size: 0.9rem; font-weight: 300; }
+
+    #job-count {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      background: rgba(0,229,176,0.08);
+      border: 1px solid rgba(0,229,176,0.2);
+      padding: 6px 14px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .sticky-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,15,0.93);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 40px;
+    }
+
+    .sticky-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .selected-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    .selected-label span { color: var(--wa); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 9px 18px;
+      border-radius: 9px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+
+    .btn-wa { background: var(--wa); color: #fff; }
+    .btn-wa:hover { background: var(--wa-dark); transform: scale(1.03); }
+    .btn-wa:disabled { background: #1e2e22; color: #3a5a40; cursor: not-allowed; transform: none; }
+
+    .btn-clear { background: var(--surface); color: var(--muted); border: 1px solid var(--border); }
+    .btn-clear:hover { border-color: var(--muted); color: var(--text); }
+    .btn-clear:disabled { opacity: 0.35; cursor: not-allowed; }
+
+    .btn-select-all { background: transparent; color: var(--accent); border: 1px solid rgba(124,92,252,0.3); }
+    .btn-select-all:hover { background: rgba(124,92,252,0.08); }
+
+    .controls {
+      max-width: 1200px;
+      margin: 24px auto;
+      padding: 0 40px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .search-wrap { flex: 1; min-width: 200px; position: relative; }
+    .search-wrap svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+
+    input[type="text"], select {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input[type="text"] { width: 100%; padding: 11px 13px 11px 40px; }
+    input[type="text"]::placeholder { color: var(--muted); }
+    input[type="text"]:focus, select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(124,92,252,0.12);
+    }
+
+    select {
+      padding: 11px 34px 11px 13px;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237a7a9a' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 11px center;
+      cursor: pointer;
+    }
+    select option { background: var(--surface); }
+
+    .grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      cursor: pointer;
+      transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s, background 0.18s;
+      animation: fadeUp 0.35s ease both;
+      position: relative;
+      user-select: none;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .card:hover { transform: translateY(-2px); border-color: rgba(37,211,102,0.35); box-shadow: 0 6px 20px rgba(37,211,102,0.07); }
+    .card.selected { border-color: var(--wa); background: rgba(37,211,102,0.05); box-shadow: 0 0 0 3px rgba(37,211,102,0.1); }
+    .card.selected .check { opacity: 1; transform: scale(1); }
+
+    /* Shared/copied state */
+    .card.shared { opacity: 0.55; }
+    .card.shared .card-title { text-decoration: line-through; text-decoration-color: rgba(255,255,255,0.3); }
+    .shared-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--wa);
+      background: rgba(37,211,102,0.1);
+      border: 1px solid rgba(37,211,102,0.25);
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+    .btn-reset-shared {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 6px 13px;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-reset-shared:hover { border-color: var(--muted); color: var(--text); }
+
+    .check {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 22px;
+      height: 22px;
+      background: var(--wa);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: opacity 0.18s, transform 0.22s cubic-bezier(.34,1.56,.64,1);
+    }
+
+    .card-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.3;
+      padding-right: 30px;
+    }
+
+    .company { font-size: 0.85rem; color: var(--muted); }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+
+    .tag {
+      font-size: 0.73rem;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .tag.remote { color: var(--accent2); border-color: rgba(0,229,176,0.2); background: rgba(0,229,176,0.06); }
+
+    .source-badge {
+      font-size: 0.63rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 100px;
+      flex-shrink: 0;
+    }
+    .source-linkedin { background: rgba(10,102,194,0.18); color: #5aadff; border: 1px solid rgba(10,102,194,0.25); }
+    .source-weworkremotely { background: rgba(0,229,176,0.08); color: var(--accent2); border: 1px solid rgba(0,229,176,0.18); }
+    .source-other { background: rgba(124,92,252,0.1); color: var(--accent); border: 1px solid rgba(124,92,252,0.2); }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      gap: 10px;
+    }
+
+    .date { font-size: 0.73rem; color: var(--muted); font-weight: 300; }
+
+    .copy-one {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 6px 13px;
+      border-radius: 7px;
+      border: 1px solid rgba(37,211,102,0.3);
+      background: transparent;
+      color: var(--wa);
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .copy-one:hover { background: rgba(37,211,102,0.1); }
+    .copy-one.copied { background: var(--wa); color: #fff; border-color: var(--wa); }
+
+    .no-results {
+      grid-column: 1/-1;
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--wa);
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 100px;
+      box-shadow: 0 8px 32px rgba(37,211,102,0.3);
+      transition: transform 0.3s cubic-bezier(.34,1.56,.64,1);
+      z-index: 999;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+
+    @media (max-width: 600px) {
+      header, .sticky-bar, .controls, .grid { padding-left: 16px; padding-right: 16px; }
+      header { padding-top: 32px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-area">
+      <h1><span>CloudOps</span> Job Board</h1>
+      <p>Select jobs → copy → paste into your community 🚀</p>
+    </div>
+    <span id="job-count">Loading…</span>
+  </div>
+</header>
+
+<div class="sticky-bar">
+  <div class="sticky-inner">
+    <div class="selected-label"><span id="sel-count">0</span> job(s) selected</div>
+    <button class="btn btn-select-all" onclick="selectAll()">Select All</button>
+    <button class="btn btn-clear" id="btn-clear" onclick="clearSelection()" disabled>Clear</button>
+    <button class="btn btn-wa" id="btn-copy-all" onclick="copyAll()" disabled>📋 Copy All for WhatsApp</button>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="search-wrap">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="search" placeholder="Search title, company, location…"/>
+  </div>
+  <select id="filter-source">
+    <option value="">All Sources</option>
+    <option value="linkedin">LinkedIn</option>
+    <option value="weworkremotely">We Work Remotely</option>
+  </select>
+  <select id="filter-remote">
+    <option value="">All Types</option>
+    <option value="remote">Remote Only</option>
+    <option value="onsite">On-site Only</option>
+  </select>
+  <select id="sort-by">
+    <option value="date">Newest First</option>
+    <option value="date-asc">Oldest First</option>
+    <option value="title">Title A–Z</option>
+    <option value="company">Company A–Z</option>
+  </select>
+</div>
+
+<div class="grid" id="grid"></div>
+<div class="toast" id="toast"></div>
+
+<script>
+  let allJobs = [], filtered = [], selected = new Set();
+  const SHARED_KEY = 'wa_shared_jobs';
+
+  function getShared() {
+    try { return new Set(JSON.parse(localStorage.getItem(SHARED_KEY) || '[]')); }
+    catch { return new Set(); }
+  }
+
+  function saveShared(set) {
+    localStorage.setItem(SHARED_KEY, JSON.stringify([...set]));
+  }
+
+  function markShared(jobUrl) {
+    const s = getShared();
+    s.add(jobUrl);
+    saveShared(s);
+  }
+
+  function unmarkShared(jobUrl) {
+    const s = getShared();
+    s.delete(jobUrl);
+    saveShared(s);
+  }
+
+  function isShared(jobUrl) {
+    return getShared().has(jobUrl);
+  }
+
+  function formatDate(str) {
+    if (!str) return '';
+    const d = new Date(str);
+    return isNaN(d) ? str : d.toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
+  }
+
+  function waFormat(j) {
+    const lines = [];
+    lines.push(`💼 *${j.title || 'Job Opening'}*`);
+    lines.push(`🏢 ${j.company || 'Unknown Company'}`);
+    const loc = [j.location, j.remote ? 'Remote' : ''].filter(Boolean).join(' | ');
+    if (loc) lines.push(`📍 ${loc}`);
+    if (j.salary && j.salary !== 'Not specified') lines.push(`💰 ${j.salary}`);
+    if (j.url) lines.push(`🔗 ${j.url}`);
+    return lines.join('\n');
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2500);
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text);
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+  }
+
+  function copyOne(idx, btn) {
+    const job = filtered[idx];
+    copyText(waFormat(job));
+    if (job.url) markShared(job.url);
+    showToast('✅ Copied to clipboard!');
+    // update card visually
+    const card = document.querySelector(`[data-idx="${idx}"]`);
+    if (card) {
+      card.classList.add('shared');
+      const badgeArea = card.querySelector('.shared-slot');
+      if (badgeArea) badgeArea.innerHTML = sharedBadgeHTML(job.url);
+      btn.textContent = '✓ Shared';
+      btn.style.opacity = '0.5';
+      btn.style.cursor = 'default';
+      btn.onclick = null;
+    }
+  }
+
+  function copyAll() {
+    const jobs = filtered.filter((_, i) => selected.has(i));
+    if (!jobs.length) return;
+    copyText(jobs.map(waFormat).join('\n\n─────────────────\n\n'));
+    // mark all as shared
+    jobs.forEach(j => { if (j.url) markShared(j.url); });
+    showToast(`✅ ${jobs.length} job(s) copied!`);
+    clearSelection();
+    renderCards();
+  }
+
+  function toggleSelect(idx) {
+    selected.has(idx) ? selected.delete(idx) : selected.add(idx);
+    const card = document.querySelector(`[data-idx="${idx}"]`);
+    if (card) card.classList.toggle('selected', selected.has(idx));
+    updateBar();
+  }
+
+  function selectAll() {
+    filtered.forEach((_, i) => selected.add(i));
+    document.querySelectorAll('.card').forEach(c => c.classList.add('selected'));
+    updateBar();
+  }
+
+  function clearSelection() {
+    selected.clear();
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+    updateBar();
+  }
+
+  function updateBar() {
+    const n = selected.size;
+    document.getElementById('sel-count').textContent = n;
+    document.getElementById('btn-copy-all').disabled = n === 0;
+    document.getElementById('btn-clear').disabled = n === 0;
+  }
+
+  function sharedBadgeHTML(url) {
+    return `<span class="shared-badge">✓ Shared <button onclick="event.stopPropagation();undoShared('${url}')" title="Mark as not shared" style="background:none;border:none;color:inherit;cursor:pointer;font-size:0.9em;padding:0 0 0 4px;opacity:0.7;">✕</button></span>`;
+  }
+
+  function undoShared(url) {
+    unmarkShared(url);
+    renderCards();
+    showToast('↩️ Marked as not shared');
+  }
+
+  function sourceBadge(source) {
+    const s = (source || '').toLowerCase();
+    if (s === 'linkedin') return `<span class="source-badge source-linkedin">LinkedIn</span>`;
+    if (s === 'weworkremotely') return `<span class="source-badge source-weworkremotely">WeWorkRemotely</span>`;
+    return `<span class="source-badge source-other">${source||'Other'}</span>`;
+  }
+
+  function renderCards() {
+    selected.clear(); updateBar();
+    const grid = document.getElementById('grid');
+    if (!filtered.length) {
+      grid.innerHTML = `<div class="no-results">No jobs match your filters.</div>`;
+      return;
+    }
+    grid.innerHTML = filtered.map((j, i) => {
+      const shared = j.url && isShared(j.url);
+      return `
+      <div class="card${shared ? ' shared' : ''}" data-idx="${i}" style="animation-delay:${Math.min(i*25,300)}ms" onclick="toggleSelect(${i})">
+        <div class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px">
+          <div class="card-title">${j.title||'Untitled'}</div>
+          ${sourceBadge(j.source)}
+        </div>
+        <div class="company">🏢 ${j.company||'Unknown'}</div>
+        <div class="tags">
+          <span class="tag">📍 ${j.location||'—'}</span>
+          ${j.remote ? '<span class="tag remote">✦ Remote</span>' : ''}
+          ${j.salary && j.salary!=='Not specified' ? `<span class="tag">💰 ${j.salary}</span>` : ''}
+        </div>
+        <div class="card-footer">
+          <span class="date">${formatDate(j.date_scraped)}</span>
+          <div class="shared-slot">${shared
+            ? sharedBadgeHTML(j.url)
+            : `<button class="copy-one" onclick="event.stopPropagation();copyOne(${i},this)">📋 Copy</button>`
+          }</div>
+        </div>
+      </div>
+    `}).join('');
+  }
+
+  function applyFilters() {
+    const q = document.getElementById('search').value.toLowerCase();
+    const src = document.getElementById('filter-source').value.toLowerCase();
+    const rem = document.getElementById('filter-remote').value;
+    const sort = document.getElementById('sort-by').value;
+
+    filtered = allJobs.filter(j => {
+      const text = `${j.title} ${j.company} ${j.location}`.toLowerCase();
+      if (q && !text.includes(q)) return false;
+      if (src && (j.source||'').toLowerCase() !== src) return false;
+      if (rem === 'remote' && !j.remote) return false;
+      if (rem === 'onsite' && j.remote) return false;
+      return true;
+    });
+
+    filtered.sort((a,b) => {
+      if (sort==='title') return (a.title||'').localeCompare(b.title||'');
+      if (sort==='company') return (a.company||'').localeCompare(b.company||'');
+      if (sort==='date-asc') return new Date(a.date_scraped) - new Date(b.date_scraped);
+      return new Date(b.date_scraped) - new Date(a.date_scraped);
+    });
+
+    document.getElementById('job-count').textContent = `${filtered.length} Jobs`;
+    renderCards();
+  }
+
+  const JSON_URL = 'https://raw.githubusercontent.com/Chie-Ah/cloudops-scraper/main/devops_jobs.json';
+
+  fetch(JSON_URL)
+    .then(r => r.json())
+    .then(data => { allJobs = data; applyFilters(); })
+    .catch(() => {
+      document.getElementById('grid').innerHTML = `<div class="no-results">⚠️ Could not load jobs from GitHub.<br>Check your internet connection or try again shortly.</div>`;
+      document.getElementById('job-count').textContent = '0 Jobs';
+    });
+
+  ['search','filter-source','filter-remote','sort-by'].forEach(id => {
+    document.getElementById(id).addEventListener('input', applyFilters);
+    document.getElementById(id).addEventListener('change', applyFilters);
+  });
+</script>
+</body>
+</html>
