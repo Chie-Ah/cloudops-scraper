@@ -1138,5 +1138,77 @@
     "description": "\n\nHeadquarters: LATAM\n    URL: http://assuresoft.com\n\nThe key to our success is simple; we deliver the highest quality, on time, with passion and commitment, and live every day by a set of great values. We've built a company that fosters long-term careers in an environment of continuous learning, with cutting-edge benefits, tools, and resources. In addition, certifications that endorse our company as a great place to work.\n Responsibilities\n\n\nSupport cloud infrastructure initiatives with AWS as the primary platform. \nWork across multi-cloud environments, including GCP as a secondary priority. ",
     "remote": true,
     "date_scraped": "2026-06-19"
+  },
+  {
+    "title": "Senior DevOps GCP Engineer",
+    "company": "InOpTra Digital",
+    "location": "None None",
+    "salary": "Not specified",
+    "url": "https://www.linkedin.com/jobs/view/senior-devops-gcp-engineer-at-inoptra-digital-4429600199",
+    "company_url": null,
+    "source": "linkedin",
+    "description": "Senior DevOps Engineer (Google Cloud Platform)\n\nLocation\n\nRemote (U.S.)\n\nAbout The Role\n\nWe're looking for a Senior DevOps Engineer to build, operate, and optimize our cloud infrastructure and application delivery platforms within Google Cloud Platform (GCP). This role is focused on improving platform reliability, security, automation, and developer productivity.\n\nYou'll work closely with product engineering teams to support cloud-native applications, improve CI/CD processes, implement Infrastructure as Code, and ensure production systems remain secure, scalable, and highly available.\n\nWhat Yo",
+    "remote": true,
+    "date_scraped": "2026-06-19"
+  },
+  {
+    "title": "GCP DevOps Engineer",
+    "company": "GLOBAL TECHNOLOGY SOLUTIONS INC",
+    "location": "None None",
+    "salary": "Not specified",
+    "url": "https://www.glassdoor.com/job-listing/gcp-devops-engineer-global-technology-solutions-JV_KO0,19_KE20,47.htm?jl=1010173008784",
+    "company_url": null,
+    "source": "jsearch",
+    "description": "GCP DevOps Engineer\n\nUnited States (Must be authorized to work in the US)\n\nRemote\n\nSalary\n\n•\nContract to hire\n•\nCompetitive compensation\n•\nVisa sponsorship is not available for this position.\n\nAbout GTS\n\nGlobal Technology Solutions, Inc. is a U.S.-based leader in CCaaS, AI/ML, and Cloud Solutions. As a Gold Partner with Genesys and Advanced Partner with AWS, Google Cloud, and Azure, we deliver implementation, consulting, managed services, and product development that drives higher ROI for our clients. Our fully remote, agile teams are empowered to innovate—and we’re looking for a GCP DevOps En",
+    "remote": true,
+    "date_scraped": "2026-06-19"
+  },
+  {
+    "title": "Senior DevOps Engineer AWS, Kubernetes, Cloud Infrastructure - Remote",
+    "company": "Triumph Financial, Inc.",
+    "location": "None None",
+    "salary": "151038–234109 YEAR",
+    "url": "https://www.tealhq.com/job/senior-devops-engineer_7ea1a1acc245ff426e74a7bb65cc2bff3e1e3",
+    "company_url": "https://ir.triumph.io",
+    "source": "jsearch",
+    "description": "About the position\n\nJoin Triumph! At Triumph, our vision is a world where freight transactions are accurate and seamless on the most modern and secure freight transaction network. That’s why we’re looking for passionate, innovative, solutions-oriented people to join our team. We thrive on providing exceptional customer service and we look for team members with an entrepreneurial spirit and a passion to build successful partnerships with our clients. Because at the end of the day our goal is to help our partners businesses run better. Are you passionate about building scalable cloud platforms, ",
+    "remote": true,
+    "date_scraped": "2026-06-19"
+  },
+  {
+    "title": "ANR - DevSecOps/Cybersecurity Engineer (GEOMAP)",
+    "company": "Shee Atiká Government Services",
+    "location": "None None",
+    "salary": "Not specified",
+    "url": "https://www.linkedin.com/jobs/view/anr-devsecops-cybersecurity-engineer-geomap-at-shee-atik%C3%A1-government-services-4430787562?position=25&pageNum=0&refId=nAZ%2FX25pTfWzNDujdTVd3Q%3D%3D&trackingId=yTEQdP%2BDCSfM1QJGtbMsgw%3D%3D",
+    "company_url": "https://www.sheeatikagov.com",
+    "source": "linkedin",
+    "description": "Description\n\nAlaska Northstar Resources is hiring! We are seeking a DevSecOps/Cybersecurity Engineer to take on a hybrid remote role, and the selected candidate shall be within commuting/driving distance of an installation that allows routine SIPR access and be available to perform SIPR activities as required.\n\nThe DevSecOps/Cybersecurity Engineer will be responsible for, but not limited to the following:\n\n• Support secure SDLC execution aligned to RMF and applicable standards\n• Coordinate cybersecurity scan findings and support mitigation/closure actions as directed by the Prime and Governmen",
+    "remote": true,
+    "date_scraped": "2026-06-19"
+  },
+  {
+    "title": "Remote DevSecOps Engineer: Secure CI​/CD at Scale",
+    "company": "1Password",
+    "location": "None None",
+    "salary": "200000–250000 YEAR",
+    "url": "https://www.learn4good.com/jobs/online_remote/info_technology/5193539255/e/",
+    "company_url": "https://1password.com",
+    "source": "jsearch",
+    "description": "Position: Remote Staff DevSecOps Engineer: Secure CI/CD at Scale\n1\n\nPassword is seeking a Staff Security Engineer to lead the Dev Sec Ops function within their Corporate Security team. This role will focus on securing developer environments and CI/CD pipelines, while also overseeing Git Hub Enterprise security. The successful candidate will have at least 8 years of experience in security engineering, deep expertise in CI/CD security, and strong scripting skills. The position offers a competitive salary, benefits program, and the opportunity for remote work within Canada and the US.\n#J-18808-Lj",
+    "remote": true,
+    "date_scraped": "2026-06-19"
+  },
+  {
+    "title": "Remote VP of AI-Driven DevSecOps Engineering",
+    "company": "GitLab",
+    "location": "None None",
+    "salary": "160000–210000 YEAR",
+    "url": "https://www.jobleads.com/us/job/remote-vp-of-ai-driven-devsecops-engineering--united-states--ec5b0b8081438755ceb801aea0ae0a11e",
+    "company_url": "https://gitlab.com",
+    "source": "jsearch",
+    "description": "GitLab is seeking a Vice President of Engineering to oversee a global engineering organization and shape the future of its AI-powered DevSecOps platform. In this hands-on executive role, you'll define engineering strategies, lead teams across multiple product domains, and champion AI-native practices. The successful candidate will bring a strong technical background, experience in coaching leaders, and a visionary mindset in a flexible, remote-first environment. Join GitLab and co-create innovative solutions in software development.",
+    "remote": true,
+    "date_scraped": "2026-06-19"
   }
 ]
