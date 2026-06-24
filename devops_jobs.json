@@ -2926,5 +2926,65 @@
     "description": "ASRC Federal Holding Company is seeking a Principal DevSecOps Infrastructure Engineer to support DSOP enterprise platform sustainment and modernization. In this role, you will provide engineering expertise across Linux/Windows systems and cloud-native infrastructure.\n\nThe ideal candidate will have over 9 years of experience in DevSecOps and strong skills in Kubernetes, Docker, and cloud services like AWS and Azure. Join us and contribute to essential government projects while enjoying competitive benefits.",
     "remote": true,
     "date_scraped": "2026-06-23"
+  },
+  {
+    "title": "Senior DevOps Engineer for Webflow Migration, DNS & Traefik Setup",
+    "company": "Upwork",
+    "location": "None None",
+    "salary": "Not specified",
+    "url": "https://www.upwork.com/freelance-jobs/apply/Senior-DevOps-Engineer-for-Webflow-Migration-DNS-Traefik-Setup_~022069473593442259655/",
+    "company_url": "https://www.upwork.com",
+    "source": "jsearch",
+    "description": "We are looking for an experienced DevOps / Infrastructure Engineer to help us launch a new Webflow website while maintaining our existing production infrastructure.\n\nCurrent setup\n\nOur domain (ranked.de) currently points to a Load Balancer / Traefik setup.\n\nHistorically, multiple services were routed through the same infrastructure:\n\n- Main website\n\n- CRM / Application\n\n- WordPress blog\n\nThe website was integrated into the application infrastructure by a previous developer, which makes the migration more complex than a standard Webflow deployment.\n\nGoal\n\nWe have already built a new website in ",
+    "remote": true,
+    "date_scraped": "2026-06-24"
+  },
+  {
+    "title": "Senior DevOps Engineer – Google Cloud Platform (GCP)",
+    "company": "Kces",
+    "location": "None None",
+    "salary": "Not specified",
+    "url": "https://www.linkedin.com/jobs/view/senior-devops-engineer-%E2%80%93-google-cloud-platform-gcp-at-kces-4432201282",
+    "company_url": null,
+    "source": "linkedin",
+    "description": "🚀 Hiring: Senior DevOps Engineer – Google Cloud Platform (GCP)\n\n📍 Location: Hybrid / Remote (U.S.)\n\n💰 Competitive Compensation + Benefits\n\nA fast-growing technology and digital engineering organization is looking for a Senior DevOps Engineer (GCP) to help build, operate, and optimize cloud infrastructure and application delivery platforms. This role is focused on improving platform reliability, security, automation, and developer productivity while supporting mission-critical cloud-native applications.\n\nWhat You'll Do\n\n🔹 Manage and support production workloads running on Google Cloud Platform ",
+    "remote": true,
+    "date_scraped": "2026-06-24"
+  },
+  {
+    "title": "DevOps Engineer - Lansing, MI/ Charlotte, NC/ Minneapolis, MN/ Richmond, VA/ New York, NY",
+    "company": "TechniPros, LLC",
+    "location": "None None",
+    "salary": "Not specified",
+    "url": "https://www.dice.com/job-detail/9b9efa53-d72f-4fd3-85e6-0bb92d9e0c14",
+    "company_url": null,
+    "source": "jsearch",
+    "description": "Job Title: DevOps Engineer\nLocation: Lansing, MI/ Charlotte, NC/ Minneapolis, MN/ Richmond, VA/ New York, NY.\nLong term Contract\nLooking for W2 Candidates. No C2C\n\nJob Description:\n\nWe are seeking an experienced DevOps Engineer to join our technology team in Dallas, TX. The ideal candidate will have strong expertise in CI/CD pipeline automation, cloud infrastructure, containerization, and infrastructure as code (IaC). The candidate should be comfortable working in Agile environments and collaborating closely with development, QA, and operations teams to streamline deployment processes and impr",
+    "remote": true,
+    "date_scraped": "2026-06-24"
+  },
+  {
+    "title": "Remote DevOps Engineer: AWS, Terraform & Python",
+    "company": "Allegis Group",
+    "location": "None None",
+    "salary": "Not specified",
+    "url": "https://www.jobleads.com/us/job/remote-devops-engineer-aws-terraform-python--united-states--eaaa050ac97222a1f77c4817d71ce88a4",
+    "company_url": "https://www.allegisgroup.com",
+    "source": "jsearch",
+    "description": "Allegis Group is seeking a DevOps Engineer with over 4 years of experience. The ideal candidate will be skilled in AWS and Python, with strong knowledge of Infrastructure as Code.\n\nThis role involves automating processes, managing AWS infrastructure, and ensuring cloud application security. Interested candidates should be flexible as the position is remote but may require a presence in either Pune or Hyderabad.",
+    "remote": true,
+    "date_scraped": "2026-06-24"
+  },
+  {
+    "title": "[Remote] HCM Devops Engineer",
+    "company": "jobright.com",
+    "location": "None None",
+    "salary": "Not specified",
+    "url": "https://www.talent.com/view?id=624687304955596211",
+    "company_url": "https://jobright.ai",
+    "source": "jsearch",
+    "description": "Note: The job is a remote job and is open to candidates in USA. Scalence L.L.C. is seeking a skilled Information Technology Consultant with expertise in SAP Converged Cloud, GitLab, Terraform, and Ansible. This remote role involves collaborating with teams to implement and manage cloud solutions and supporting the development of CI/CD pipelines.\n\nResponsibilities\n\nCollaborate with teams to implement and manage SAP Converged Cloud solutions\n\nUtilize GitLab, Terraform, and Ansible for efficient DevOps practices\n\nSupport the development and maintenance of CI/CD pipelines\n\nSkills\n\nExpertise in SAP",
+    "remote": true,
+    "date_scraped": "2026-06-24"
   }
 ]
