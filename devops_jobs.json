@@ -2986,5 +2986,53 @@
     "description": "Note: The job is a remote job and is open to candidates in USA. Scalence L.L.C. is seeking a skilled Information Technology Consultant with expertise in SAP Converged Cloud, GitLab, Terraform, and Ansible. This remote role involves collaborating with teams to implement and manage cloud solutions and supporting the development of CI/CD pipelines.\n\nResponsibilities\n\nCollaborate with teams to implement and manage SAP Converged Cloud solutions\n\nUtilize GitLab, Terraform, and Ansible for efficient DevOps practices\n\nSupport the development and maintenance of CI/CD pipelines\n\nSkills\n\nExpertise in SAP",
     "remote": true,
     "date_scraped": "2026-06-24"
+  },
+  {
+    "title": "Bright Vision Technologies: Site Reliability Engineer (SRE)",
+    "company": "",
+    "location": "New Jersey",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/bright-vision-technologies-site-reliability-engineer-sre",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: Remote\n    URL: http://bvteck.com\n\n\nBright Vision Technologies is a forward-thinking software development company dedicated to building innovative solutions that help businesses automate and optimize their operations. We leverage cutting-edge technologies to create scalable, secure, and user-friendly applications.As we continue to grow, we’re looking for a skilled Site Reliability Engineer (SRE) to join our dynamic team and contribute to our mission of transforming business processes through technology.This is a fantastic opportunity to join an established and well-respected or",
+    "remote": true,
+    "date_scraped": "2026-06-25"
+  },
+  {
+    "title": "IO Global: DevOps Engineer - Midnight Foundation",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/io-global-devops-engineer-midnight-foundation",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: India\n    URL: http://iohk.io\n\nDescriptionDevOps Engineer | Midnight FoundationLocation: This is a full-time remote role for candidates based in Asia, with 1–2 hours of daily overlap required with US or EU time zones.Schedule: Flexible (Sunday–Thursday or Tuesday–Saturday) Work ScheduleThe RoleYou are ready to apply best practices for monitoring, observability, security, and infrastructure automation to expand the multi-cloud and bare metal platforms powering our Cardano and Midnight deployments. The ideal candidate is passionate about blockchain, privacy, and disrupting the st",
+    "remote": true,
+    "date_scraped": "2026-06-25"
+  },
+  {
+    "title": "Agilent Technologies: DevOps & Platform Engineer (AWS / CI/CD)",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/agilent-technologies-devops-platform-engineer-aws-ci-cd",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: Option to Work Remote in United Kingdom\n    URL: http://agilent.com\n\nJob DescriptionAgilent’s CrossLab Connect team is seeking an expert-level DevOps Software Engineer to design, build, and optimize CI/CD pipelines, cloud infrastructure, and deployment automation across a hybrid cloud and on-premise ecosystem.This role combines DevOps engineering, cloud architecture, and software development, requiring strong experience in automation, scripting, and full-stack engineering support. The position supports critical delivery pipelines and helps scale engineering capabilities by cons",
+    "remote": true,
+    "date_scraped": "2026-06-25"
+  },
+  {
+    "title": "Southwest Power Pool: DevOps SRE - Senior or Lead  (Remote Eligible)",
+    "company": "",
+    "location": "Arkansas",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/southwest-power-pool-devops-sre-senior-or-lead-remote-eligible",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: Little Rock, Arkansas, 72223, United States\n    URL: http://spp.org\n\nSouthwest Power Pool (SPP) is about more than power. We’re about the power of relationships. Our employees have the opportunity to work together to ensure electricity is delivered reliably and affordably to the millions of people living in our service territory. We have been voted one of Arkansas’ Best Places to work by Arkansas Business and we are looking for a member of our team who is passionate about our mission to keep the lights on!\nWe have a core ideology here at SPP that we stand by: Do the right thing",
+    "remote": true,
+    "date_scraped": "2026-06-25"
   }
 ]
