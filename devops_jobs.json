@@ -3034,5 +3034,77 @@
     "description": "\n\nHeadquarters: Little Rock, Arkansas, 72223, United States\n    URL: http://spp.org\n\nSouthwest Power Pool (SPP) is about more than power. We’re about the power of relationships. Our employees have the opportunity to work together to ensure electricity is delivered reliably and affordably to the millions of people living in our service territory. We have been voted one of Arkansas’ Best Places to work by Arkansas Business and we are looking for a member of our team who is passionate about our mission to keep the lights on!\nWe have a core ideology here at SPP that we stand by: Do the right thing",
     "remote": true,
     "date_scraped": "2026-06-25"
+  },
+  {
+    "title": "DevOps Engineer job at Booz Allen Hamilton in Tampa, FL, Lexington, MA, McLean, VA, Colorado Springs, CO",
+    "company": "Booz Allen Hamilton",
+    "location": "None None",
+    "salary": "Not specified",
+    "url": "https://remote.co/job-details/devops-engineer-23cd0aa6-f567-48c4-b2f4-bb9d27903d82",
+    "company_url": "https://www.boozallen.com",
+    "source": "jsearch",
+    "description": "Title: DevOps Engineer\n\nlocations\n\nLexington, MA\n\nMcLean, VA\n\nTampa, FL\n\nColorado Springs, CO\n\ntime type\n\nFull time\n\njob requisition id\n\nR0242566\n\nJob Description:\n\nDevOps Engineer\n\nThe Opportunity:\nToday’s dynamic technology landscape demands constant and rapid innovation. To facilitate this transformation, we must ensure continuous integration and application development. That’s why we need an experienced DevOps engineer like you who’s eager to design, test, and program critical applications for our clients who need them most.\n\nAs a Software Factory DevOps Engineer on our team, you’ll pipeli",
+    "remote": true,
+    "date_scraped": "2026-06-26"
+  },
+  {
+    "title": "Sr. Principal DevOps Architect (Remote)",
+    "company": "Collins Aerospace",
+    "location": "None None",
+    "salary": "Not specified",
+    "url": "https://www.linkedin.com/jobs/view/sr-principal-devops-architect-remote-at-collins-aerospace-4432106506",
+    "company_url": null,
+    "source": "linkedin",
+    "description": "Date Posted:\n\n2026-06-23\n\nCountry:\n\nUnited States of America\n\nLocation:\n\nUS-CA-SAN JOSE-826 ~ 200 Holger Way ~ BLDG 826, Ast\n\nPosition Role Type:\n\nRemote\n\nU.S. Citizen, U.S. Person, or Immigration Status Requirements:\n\nThe ability to obtain and maintain a U.S. government issued security clearance is required. U.S. citizenship is required, as only U.S. citizens are eligible for a security clearance\n\nSecurity Clearance Type:\n\nDoD Clearance: Top Secret\n\nSecurity Clearance Status:\n\nActive and existing security clearance required after day 1\n\nAt RTX, the world's largest aerospace and defense compan",
+    "remote": true,
+    "date_scraped": "2026-06-26"
+  },
+  {
+    "title": "[Remote] Senior DevOps Engineer / Cloud Automation Architect for Fastwater Staffing",
+    "company": "HIKINEX",
+    "location": "None None",
+    "salary": "Not specified",
+    "url": "https://jobright.ai/jobs/info/6a3c59404d047136e093095a?visit=staff-automation-ai-engineer---manufacturing-engineering-jobs-in-united-states",
+    "company_url": null,
+    "source": "jsearch",
+    "description": "Note: The job is a remote job and is open to candidates in USA. HIKINEX is a staffing company seeking a Senior DevOps Engineer / Cloud Automation Architect. The role involves leveraging extensive experience in DevOps and Cloud Engineering to design and automate CI/CD pipelines, manage AWS cloud environments, and implement observability solutions.\n\nSkills\n• U.S. Citizen or Green Card (Permanent Resident) holder ONLY\n• No visa holders or temporary-status individuals\n• Must be willing to undergo fingerprinting and a government background check (CJIS-type)\n• LinkedIn profile required; all resumes ",
+    "remote": true,
+    "date_scraped": "2026-06-26"
+  },
+  {
+    "title": "DevOps Systems Engineer",
+    "company": "ClearObject",
+    "location": "None None",
+    "salary": "Not specified",
+    "url": "https://www.linkedin.com/jobs/view/devops-systems-engineer-at-clearobject-4429874176",
+    "company_url": "https://www.clearobject.com",
+    "source": "linkedin",
+    "description": "The ClearObject Engineering Services division is a managed service provider. Our primary focus is managed services for the IBM Engineering Lifecycle Management (ELM) Java application (previously known as the Rational Toolset). We are the sole managed service provider of the IBM ELM SaaS offering. ClearObject operates worldwide with a focus on efficiency and effectiveness.\n\nSummary:\n\nClearObject seeks a self-motivated individual with the background to be proactive and implement best practices in our heavily RedHat Linux-dominated environment. An Ideal candidate will have a strong understanding ",
+    "remote": true,
+    "date_scraped": "2026-06-26"
+  },
+  {
+    "title": "Remote DevOps Engineer — Reliable Infra, Equity",
+    "company": "Clever Real Estate",
+    "location": "None None",
+    "salary": "140000–160000 YEAR",
+    "url": "https://www.jobleads.com/us/job/remote-devops-engineer-reliable-infra-equity--united-states--e4c07bde73f254f222b600677cb8e1d68",
+    "company_url": "https://listwithclever.com",
+    "source": "jsearch",
+    "description": "Clever Real Estate is seeking a DevOps Engineer to enhance and maintain its infrastructure and operations. This remote role focuses on automating deployment systems, increasing reliability, and ensuring the seamless functioning of software services.\n\nIdeal candidates will have extensive experience in cloud infrastructure, particularly AWS, and possess a proactive approach to problem-solving and system improvement. The salary ranges from $140-160k, including bonuses and equity.",
+    "remote": true,
+    "date_scraped": "2026-06-26"
+  },
+  {
+    "title": "DevOps Architect / SME MultiCloud",
+    "company": "EITACIES Inc.",
+    "location": "None None",
+    "salary": "Not specified",
+    "url": "https://www.linkedin.com/jobs/view/devops-architect-sme-multicloud-at-eitacies-inc-4433046418",
+    "company_url": null,
+    "source": "linkedin",
+    "description": "Benefits:\n\n• 401(k)\n\nDevOps Architect / SME MultiCloud\n\nCulver City, CA (Onsite)\n\nWe are looking for a DevOps SME / Architect to lead platform engineering standards across a multi-cloud, hybrid environment. This is a Guild / COE-level role, requiring deep expertise in infrastructure, automation, and cloud architecture, along with the ability to define and scale DevOps practices across teams.\n\nRequired Skills: Multi-cloud (AWS + GCP) , Kubernetes + Docker , Terraform / CDK / Pulumi , Python / scripting , DevOps Architecture / Leadership\n\nKey Responsibilities:\n\n• Architect and standardize DevOps",
+    "remote": true,
+    "date_scraped": "2026-06-26"
   }
 ]
