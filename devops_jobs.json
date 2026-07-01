@@ -3106,5 +3106,29 @@
     "description": "Benefits:\n\n• 401(k)\n\nDevOps Architect / SME MultiCloud\n\nCulver City, CA (Onsite)\n\nWe are looking for a DevOps SME / Architect to lead platform engineering standards across a multi-cloud, hybrid environment. This is a Guild / COE-level role, requiring deep expertise in infrastructure, automation, and cloud architecture, along with the ability to define and scale DevOps practices across teams.\n\nRequired Skills: Multi-cloud (AWS + GCP) , Kubernetes + Docker , Terraform / CDK / Pulumi , Python / scripting , DevOps Architecture / Leadership\n\nKey Responsibilities:\n\n• Architect and standardize DevOps",
     "remote": true,
     "date_scraped": "2026-06-26"
+  },
+  {
+    "title": "Qualifyze: Senior DevOps Engineer",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/qualifyze-senior-devops-engineer",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: Passeig de Gràcia 19 Barcelona, Connecticut, 08007 Spain\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\nJob description\n\n\nAbout Qualifyze,\n \nFounded in 2019, Qualifyze is a leading company in supply chain compliance management in the Life Sciences industry, trusted by over 1,500 pharmaceutical and healthcare companies globally. Our digital suite of solutions connects manufacturers, suppliers, and a global network of more than 250 auditors and quality experts.\nWith a track record of over 4,500 audits across 85+ countries and the largest and most accurate supplier network and data analytics tools, Qualifyze ",
+    "remote": true,
+    "date_scraped": "2026-07-01"
+  },
+  {
+    "title": "Win Home Inspection: DevOps Engineer",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/win-home-inspection-devops-engineer",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: Delhi\n\nSenior DevOps EngineerLocation: 100% Remote About the RoleWIN is building modern, scalable technology platforms that power our nationwide home services network. We are looking for a highly skilled DevOps Engineer who enjoys automating, troubleshooting, and optimizing systems to establish the foundation of our cloud infrastructure and DevOps practices.You will work closely with our engineering team to design secure, scalable systems, build automated CI/CD pipelines, and ensure smooth and reliable operations across all environments. What You’ll DoDesign, implement, and mai",
+    "remote": true,
+    "date_scraped": "2026-07-01"
   }
 ]
