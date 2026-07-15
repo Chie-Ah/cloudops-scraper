@@ -1,11 +1,21 @@
 import requests
 import json
 import os
+import sys
 from datetime import date
 from bs4 import BeautifulSoup
 
 today = str(date.today())
-RAPIDAPI_KEY = os.environ.get("RAPIDAPI_KEY", "")
+
+# ── Load API key ──────────────────────────────────────────────────────────────
+RAPIDAPI_KEY = os.environ.get("RAPIDAPI_KEY", "").strip()
+
+if not RAPIDAPI_KEY:
+    print("❌ ERROR: RAPIDAPI_KEY environment variable is not set or is empty!")
+    print("   Make sure the secret is added in GitHub → Settings → Secrets → Actions")
+    sys.exit(1)
+
+print(f"✅ API key loaded (ends with: ...{RAPIDAPI_KEY[-6:]})")
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -22,7 +32,6 @@ def save_jobs(jobs, path="devops_jobs.json"):
     print(f"✅ Saved {len(jobs)} jobs to {path}")
 
 def dedup(existing, new_jobs):
-    """Keep existing jobs, add only new ones by URL."""
     seen_urls = {j.get("url") for j in existing if j.get("url")}
     added = 0
     for job in new_jobs:
@@ -33,25 +42,25 @@ def dedup(existing, new_jobs):
     print(f"  → {added} new jobs added (duplicates skipped)")
     return existing
 
-# ── JSearch (LinkedIn + Indeed via RapidAPI) ──────────────────────────────────
+# ── JSearch ───────────────────────────────────────────────────────────────────
 
 JSEARCH_URL = "https://jsearch.p.rapidapi.com/search"
-JSEARCH_HEADERS = {
-    "X-RapidAPI-Key": RAPIDAPI_KEY,
-    "X-RapidAPI-Host": "jsearch.p.rapidapi.com"
-}
+
+def get_jsearch_headers():
+    return {
+        "X-RapidAPI-Key": RAPIDAPI_KEY,
+        "X-RapidAPI-Host": "jsearch.p.rapidapi.com"
+    }
 
 JSEARCH_QUERIES = [
-    # Remote - open to Africa
-    {"query": "DevOps Engineer remote Africa",          "remote": True},
-    {"query": "Cloud Engineer remote Africa",           "remote": True},
-    {"query": "Site Reliability Engineer remote Africa","remote": True},
-    {"query": "Platform Engineer remote Africa",        "remote": True},
-    {"query": "DevSecOps Engineer remote Africa",       "remote": True},
-    # Physical - Cameroon
-    {"query": "DevOps Engineer Cameroon",               "remote": False},
-    {"query": "Cloud Engineer Cameroon",                "remote": False},
-    {"query": "IT Infrastructure Engineer Cameroon",    "remote": False},
+    {"query": "DevOps Engineer remote Africa",           "remote": True},
+    {"query": "Cloud Engineer remote Africa",            "remote": True},
+    {"query": "Site Reliability Engineer remote Africa", "remote": True},
+    {"query": "Platform Engineer remote Africa",         "remote": True},
+    {"query": "DevSecOps Engineer remote Africa",        "remote": True},
+    {"query": "DevOps Engineer Cameroon",                "remote": False},
+    {"query": "Cloud Engineer Cameroon",                 "remote": False},
+    {"query": "IT Infrastructure Engineer Cameroon",     "remote": False},
 ]
 
 def scrape_jsearch():
@@ -60,8 +69,14 @@ def scrape_jsearch():
         print(f"  JSearch: {q['query']}")
         try:
             params = {"query": q["query"], "page": "1", "num_pages": "2", "date_posted": "month"}
-            resp = requests.get(JSEARCH_URL, headers=JSEARCH_HEADERS, params=params, timeout=15)
+            resp = requests.get(JSEARCH_URL, headers=get_jsearch_headers(), params=params, timeout=20)
+            print(f"    Status: {resp.status_code}")
+            if resp.status_code != 200:
+                print(f"    Response: {resp.text[:300]}")
+                continue
             data = resp.json()
+            found = len(data.get("data", []))
+            print(f"    Found: {found} jobs")
             for j in data.get("data", []):
                 jobs.append({
                     "title":        j.get("job_title", ""),
@@ -106,15 +121,16 @@ def scrape_weworkremotely():
         print(f"  WWR: {feed_url}")
         try:
             resp = requests.get(feed_url, timeout=15)
+            print(f"    Status: {resp.status_code}")
             soup = BeautifulSoup(resp.content, "xml")
-            for item in soup.find_all("item"):
-                title    = item.find("title").text if item.find("title") else ""
-                link     = item.find("link").text if item.find("link") else ""
-                desc     = item.find("description").text if item.find("description") else ""
-                region   = item.find("region").text.lower() if item.find("region") else ""
-                pub_date = item.find("pubDate").text[:10] if item.find("pubDate") else today
+            items = soup.find_all("item")
+            print(f"    Items found: {len(items)}")
+            for item in items:
+                title  = item.find("title").text if item.find("title") else ""
+                link   = item.find("link").text if item.find("link") else ""
+                desc   = item.find("description").text if item.find("description") else ""
+                region = item.find("region").text.lower() if item.find("region") else ""
 
-                # Filter: DevOps / Cloud / SRE titles only
                 title_lower = title.lower()
                 if not any(kw in title_lower for kw in [
                     "devops", "cloud", "sre", "reliability", "infrastructure",
@@ -122,7 +138,6 @@ def scrape_weworkremotely():
                 ]):
                     continue
 
-                # Filter: Africa-friendly or worldwide
                 region_text = (region + " " + desc).lower()
                 if not any(kw in region_text for kw in AFRICA_KEYWORDS):
                     continue
@@ -145,10 +160,9 @@ def scrape_weworkremotely():
     print(f"  WWR total: {len(jobs)} jobs")
     return jobs
 
-# ── Glassdoor (via JSearch fallback query) ────────────────────────────────────
+# ── Glassdoor (via JSearch) ───────────────────────────────────────────────────
 
 def scrape_glassdoor():
-    """Glassdoor blocks direct scraping; we pull their listings via JSearch."""
     jobs = []
     queries = [
         "DevOps Engineer remote site:glassdoor.com",
@@ -158,13 +172,19 @@ def scrape_glassdoor():
         print(f"  Glassdoor (via JSearch): {q}")
         try:
             params = {"query": q, "page": "1", "num_pages": "1", "date_posted": "month"}
-            resp = requests.get(JSEARCH_URL, headers=JSEARCH_HEADERS, params=params, timeout=15)
+            resp = requests.get(JSEARCH_URL, headers=get_jsearch_headers(), params=params, timeout=20)
+            print(f"    Status: {resp.status_code}")
+            if resp.status_code != 200:
+                print(f"    Response: {resp.text[:300]}")
+                continue
             data = resp.json()
+            found = len(data.get("data", []))
+            print(f"    Found: {found} jobs")
             for j in data.get("data", []):
                 jobs.append({
                     "title":        j.get("job_title", ""),
                     "company":      j.get("employer_name", ""),
-                    "location":     f"{j.get('job_city','')} {j.get('job_country','')}".strip(),
+                    "location":     f"{j.get('job_city', '')} {j.get('job_country', '')}".strip(),
                     "salary":       _jsearch_salary(j),
                     "url":          j.get("job_apply_link") or j.get("job_google_link", ""),
                     "company_url":  j.get("employer_website", ""),

@@ -594,13 +594,11 @@
     renderCards();
   }
 
-  const JSON_URL = 'https://raw.githubusercontent.com/Chie-Ah/cloudops-scraper/main/devops_jobs.json';
-
-  fetch(JSON_URL)
+  fetch('devops_jobs.json')
     .then(r => r.json())
     .then(data => { allJobs = data; applyFilters(); })
     .catch(() => {
-      document.getElementById('grid').innerHTML = `<div class="no-results">⚠️ Could not load jobs from GitHub.<br>Check your internet connection or try again shortly.</div>`;
+      document.getElementById('grid').innerHTML = `<div class="no-results">⚠️ Could not load <strong>devops_jobs.json</strong>.<br>Make sure both files are in the same folder and open via <strong>Live Server</strong> in VS Code.</div>`;
       document.getElementById('job-count').textContent = '0 Jobs';
     });
 
