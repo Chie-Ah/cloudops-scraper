@@ -7,17 +7,13 @@ from bs4 import BeautifulSoup
 
 today = str(date.today())
 
-# ── Load API key ──────────────────────────────────────────────────────────────
 RAPIDAPI_KEY = os.environ.get("RAPIDAPI_KEY", "").strip()
 
 if not RAPIDAPI_KEY:
     print("❌ ERROR: RAPIDAPI_KEY environment variable is not set or is empty!")
-    print("   Make sure the secret is added in GitHub → Settings → Secrets → Actions")
     sys.exit(1)
 
 print(f"✅ API key loaded (ends with: ...{RAPIDAPI_KEY[-6:]})")
-
-# ── Helpers ───────────────────────────────────────────────────────────────────
 
 def load_existing(path="devops_jobs.json"):
     try:
@@ -42,8 +38,6 @@ def dedup(existing, new_jobs):
     print(f"  → {added} new jobs added (duplicates skipped)")
     return existing
 
-# ── JSearch ───────────────────────────────────────────────────────────────────
-
 JSEARCH_URL = "https://jsearch.p.rapidapi.com/search"
 
 def get_jsearch_headers():
@@ -53,15 +47,37 @@ def get_jsearch_headers():
     }
 
 JSEARCH_QUERIES = [
-    {"query": "DevOps Engineer remote Africa",           "remote": True},
-    {"query": "Cloud Engineer remote Africa",            "remote": True},
-    {"query": "Site Reliability Engineer remote Africa", "remote": True},
-    {"query": "Platform Engineer remote Africa",         "remote": True},
-    {"query": "DevSecOps Engineer remote Africa",        "remote": True},
-    {"query": "DevOps Engineer Cameroon",                "remote": False},
-    {"query": "Cloud Engineer Cameroon",                 "remote": False},
-    {"query": "IT Infrastructure Engineer Cameroon",     "remote": False},
+    {"query": "DevOps Engineer Nigeria",                "remote": False},
+    {"query": "Cloud Engineer Nigeria",                 "remote": False},
+    {"query": "DevOps Engineer Kenya",                  "remote": False},
+    {"query": "Cloud Engineer Kenya",                   "remote": False},
+    {"query": "DevOps Engineer South Africa",           "remote": False},
+    {"query": "Cloud Engineer South Africa",            "remote": False},
+    {"query": "DevOps Engineer Ghana",                  "remote": False},
+    {"query": "DevOps Engineer Cameroon",               "remote": False},
+    {"query": "Cloud Engineer Cameroon",                "remote": False},
+    {"query": "IT Infrastructure Engineer Cameroon",    "remote": False},
+    {"query": "DevOps Engineer Egypt",                  "remote": False},
+    {"query": "Cloud Engineer Rwanda",                  "remote": False},
+    {"query": "DevOps Engineer remote hiring Africa",   "remote": True},
+    {"query": "Cloud Engineer remote hiring Africa",    "remote": True},
+    {"query": "SRE remote hiring Africa",               "remote": True},
+    {"query": "Platform Engineer remote hiring Africa", "remote": True},
+    {"query": "DevSecOps remote hiring Africa",         "remote": True},
+    {"query": "DevOps Engineer remote Africa timezone", "remote": True},
+    {"query": "Cloud Engineer remote EMEA Africa",      "remote": True},
+    {"query": "Infrastructure Engineer remote Africa",  "remote": True},
 ]
+
+def _jsearch_salary(j):
+    mn = j.get("job_min_salary")
+    mx = j.get("job_max_salary")
+    period = j.get("job_salary_period", "")
+    if mn and mx:
+        return f"{mn}-{mx} {period}".strip()
+    if mn:
+        return f"From {mn} {period}".strip()
+    return "Not specified"
 
 def scrape_jsearch():
     jobs = []
@@ -69,6 +85,8 @@ def scrape_jsearch():
         print(f"  JSearch: {q['query']}")
         try:
             params = {"query": q["query"], "page": "1", "num_pages": "2", "date_posted": "month"}
+            if q["remote"]:
+                params["remote_jobs_only"] = "true"
             resp = requests.get(JSEARCH_URL, headers=get_jsearch_headers(), params=params, timeout=20)
             print(f"    Status: {resp.status_code}")
             if resp.status_code != 200:
@@ -95,25 +113,24 @@ def scrape_jsearch():
     print(f"  JSearch total: {len(jobs)} jobs")
     return jobs
 
-def _jsearch_salary(j):
-    mn = j.get("job_min_salary")
-    mx = j.get("job_max_salary")
-    period = j.get("job_salary_period", "")
-    if mn and mx:
-        return f"{mn}–{mx} {period}".strip()
-    if mn:
-        return f"From {mn} {period}".strip()
-    return "Not specified"
-
-# ── We Work Remotely ──────────────────────────────────────────────────────────
-
 WWR_FEEDS = [
     "https://weworkremotely.com/categories/remote-devops-sysadmin-jobs.rss",
     "https://weworkremotely.com/categories/remote-full-stack-programming-jobs.rss",
+    "https://weworkremotely.com/categories/remote-back-end-programming-jobs.rss",
 ]
 
-AFRICA_KEYWORDS = ["africa", "cameroon", "nigeria", "kenya", "ghana", "worldwide",
-                   "anywhere", "global", "remote", "all timezones", "emea"]
+AFRICA_KEYWORDS = [
+    "africa", "cameroon", "nigeria", "kenya", "ghana", "south africa",
+    "rwanda", "ethiopia", "egypt", "worldwide", "anywhere", "global",
+    "all timezones", "emea", "work from anywhere", "fully remote",
+]
+
+EXCLUDE_KEYWORDS = [
+    "us only", "usa only", "united states only", "canada only",
+    "uk only", "eu only", "europe only", "australia only",
+    "must be located in the us", "must reside in the us",
+    "authorized to work in the us",
+]
 
 def scrape_weworkremotely():
     jobs = []
@@ -130,18 +147,18 @@ def scrape_weworkremotely():
                 link   = item.find("link").text if item.find("link") else ""
                 desc   = item.find("description").text if item.find("description") else ""
                 region = item.find("region").text.lower() if item.find("region") else ""
-
                 title_lower = title.lower()
                 if not any(kw in title_lower for kw in [
                     "devops", "cloud", "sre", "reliability", "infrastructure",
-                    "platform engineer", "devsecops", "kubernetes", "terraform"
+                    "platform engineer", "devsecops", "kubernetes", "terraform",
+                    "site reliability",
                 ]):
                     continue
-
-                region_text = (region + " " + desc).lower()
-                if not any(kw in region_text for kw in AFRICA_KEYWORDS):
+                combined = (region + " " + desc).lower()
+                if any(kw in combined for kw in EXCLUDE_KEYWORDS):
                     continue
-
+                if not any(kw in combined for kw in AFRICA_KEYWORDS):
+                    continue
                 clean_desc = BeautifulSoup(desc, "html.parser").get_text()[:600]
                 jobs.append({
                     "title":        title.split(" at ")[0].strip() if " at " in title else title,
@@ -160,65 +177,17 @@ def scrape_weworkremotely():
     print(f"  WWR total: {len(jobs)} jobs")
     return jobs
 
-# ── Glassdoor (via JSearch) ───────────────────────────────────────────────────
-
-def scrape_glassdoor():
-    jobs = []
-    queries = [
-        "DevOps Engineer remote site:glassdoor.com",
-        "Cloud Engineer Cameroon site:glassdoor.com",
-    ]
-    for q in queries:
-        print(f"  Glassdoor (via JSearch): {q}")
-        try:
-            params = {"query": q, "page": "1", "num_pages": "1", "date_posted": "month"}
-            resp = requests.get(JSEARCH_URL, headers=get_jsearch_headers(), params=params, timeout=20)
-            print(f"    Status: {resp.status_code}")
-            if resp.status_code != 200:
-                print(f"    Response: {resp.text[:300]}")
-                continue
-            data = resp.json()
-            found = len(data.get("data", []))
-            print(f"    Found: {found} jobs")
-            for j in data.get("data", []):
-                jobs.append({
-                    "title":        j.get("job_title", ""),
-                    "company":      j.get("employer_name", ""),
-                    "location":     f"{j.get('job_city', '')} {j.get('job_country', '')}".strip(),
-                    "salary":       _jsearch_salary(j),
-                    "url":          j.get("job_apply_link") or j.get("job_google_link", ""),
-                    "company_url":  j.get("employer_website", ""),
-                    "source":       "glassdoor",
-                    "description":  j.get("job_description", "")[:600],
-                    "remote":       j.get("job_is_remote", False),
-                    "date_scraped": today,
-                })
-        except Exception as e:
-            print(f"    ⚠️ Glassdoor error: {e}")
-    print(f"  Glassdoor total: {len(jobs)} jobs")
-    return jobs
-
-# ── Main ──────────────────────────────────────────────────────────────────────
-
 if __name__ == "__main__":
     print("🚀 CloudOps Job Scraper starting...")
     print(f"📅 Date: {today}\n")
-
     existing = load_existing()
     print(f"📂 Existing jobs loaded: {len(existing)}\n")
-
     print("🔍 Scraping JSearch (LinkedIn + Indeed)...")
     jsearch_jobs = scrape_jsearch()
-
     print("\n🔍 Scraping We Work Remotely...")
     wwr_jobs = scrape_weworkremotely()
-
-    print("\n🔍 Scraping Glassdoor (via JSearch)...")
-    glassdoor_jobs = scrape_glassdoor()
-
-    all_new = jsearch_jobs + wwr_jobs + glassdoor_jobs
+    all_new = jsearch_jobs + wwr_jobs
     print(f"\n📊 Total new jobs scraped: {len(all_new)}")
-
     final = dedup(existing, all_new)
     save_jobs(final)
     print(f"\n✅ Done! Total unique jobs in file: {len(final)}")
