@@ -47,27 +47,44 @@ def get_jsearch_headers():
     }
 
 JSEARCH_QUERIES = [
-    {"query": "DevOps Engineer Nigeria",                "remote": False},
-    {"query": "Cloud Engineer Nigeria",                 "remote": False},
-    {"query": "DevOps Engineer Kenya",                  "remote": False},
-    {"query": "Cloud Engineer Kenya",                   "remote": False},
-    {"query": "DevOps Engineer South Africa",           "remote": False},
-    {"query": "Cloud Engineer South Africa",            "remote": False},
-    {"query": "DevOps Engineer Ghana",                  "remote": False},
-    {"query": "DevOps Engineer Cameroon",               "remote": False},
-    {"query": "Cloud Engineer Cameroon",                "remote": False},
-    {"query": "IT Infrastructure Engineer Cameroon",    "remote": False},
-    {"query": "DevOps Engineer Egypt",                  "remote": False},
-    {"query": "Cloud Engineer Rwanda",                  "remote": False},
-    {"query": "DevOps Engineer remote hiring Africa",   "remote": True},
-    {"query": "Cloud Engineer remote hiring Africa",    "remote": True},
-    {"query": "SRE remote hiring Africa",               "remote": True},
-    {"query": "Platform Engineer remote hiring Africa", "remote": True},
-    {"query": "DevSecOps remote hiring Africa",         "remote": True},
-    {"query": "DevOps Engineer remote Africa timezone", "remote": True},
-    {"query": "Cloud Engineer remote EMEA Africa",      "remote": True},
-    {"query": "Infrastructure Engineer remote Africa",  "remote": True},
+    # Remote - open to Africa
+    {"query": "DevOps Engineer remote hiring Africa",        "remote": True},
+    {"query": "Cloud Engineer remote hiring Africa",         "remote": True},
+    {"query": "SRE remote hiring Africa",                    "remote": True},
+    {"query": "Platform Engineer remote hiring Africa",      "remote": True},
+    {"query": "DevSecOps remote hiring Africa",              "remote": True},
+    {"query": "DevOps Engineer remote Africa timezone",      "remote": True},
+    {"query": "Cloud Engineer remote EMEA Africa",           "remote": True},
+    {"query": "Infrastructure Engineer remote Africa",       "remote": True},
+    # Remote in specific African countries
+    {"query": "DevOps Engineer remote Nigeria",              "remote": True},
+    {"query": "Cloud Engineer remote Nigeria",               "remote": True},
+    {"query": "DevOps Engineer remote Kenya",                "remote": True},
+    {"query": "Cloud Engineer remote South Africa",          "remote": True},
+    {"query": "DevOps Engineer remote Cameroon",             "remote": True},
+    {"query": "Cloud Engineer remote Ghana",                 "remote": True},
+    # Relocation offered
+    {"query": "DevOps Engineer relocation package Africa",   "remote": False},
+    {"query": "Cloud Engineer relocation assistance Africa", "remote": False},
+    {"query": "DevOps Engineer visa sponsorship Africa",     "remote": False},
+    {"query": "Cloud Engineer visa sponsorship relocation",  "remote": False},
 ]
+
+# Keywords indicating relocation support
+RELOCATION_KEYWORDS = [
+    "relocation", "relocate", "visa sponsorship", "visa sponsor",
+    "we will sponsor", "relocation package", "relocation assistance",
+    "relocation support", "willing to relocate",
+]
+
+def is_remote_or_relocation(job):
+    """Keep job only if remote OR offers relocation support."""
+    if job.get("remote"):
+        return True
+    desc = (job.get("description") or "").lower()
+    if any(kw in desc for kw in RELOCATION_KEYWORDS):
+        return True
+    return False
 
 def _jsearch_salary(j):
     mn = j.get("job_min_salary")
@@ -96,7 +113,7 @@ def scrape_jsearch():
             found = len(data.get("data", []))
             print(f"    Found: {found} jobs")
             for j in data.get("data", []):
-                jobs.append({
+                job = {
                     "title":        j.get("job_title", ""),
                     "company":      j.get("employer_name", ""),
                     "location":     f"{j.get('job_city', '')} {j.get('job_country', '')}".strip(),
@@ -107,7 +124,9 @@ def scrape_jsearch():
                     "description":  j.get("job_description", "")[:600],
                     "remote":       j.get("job_is_remote", q["remote"]),
                     "date_scraped": today,
-                })
+                }
+                if is_remote_or_relocation(job):
+                    jobs.append(job)
         except Exception as e:
             print(f"    ⚠️ JSearch error: {e}")
     print(f"  JSearch total: {len(jobs)} jobs")
