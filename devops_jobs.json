@@ -4306,5 +4306,77 @@
     "description": "\n\nHeadquarters: Düsseldorf\n\nWhat you’ll do:Keep CI/CD pipelines running across multiple repositories and teams.Improve and standardize pipelines: reusable templates, consistent steps, fewer surprises.Maintain and improve developer tools such as Azure DevOps, GitHub Enterprise, and SonarQube (or comparable tools).Add practical checks to pipelines: tests, code quality gates, and basic security scanning.Help developers when pipelines fail: find the cause, fix it, and prevent repeats.Support moving and aligning repositories, pipelines, and tooling across teams.Write clear documentation so teams ca",
     "remote": true,
     "date_scraped": "2026-08-19"
+  },
+  {
+    "title": "Eer Poland: Senior DevOps / Infrastructure Engineer",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/eer-poland-senior-devops-infrastructure-engineer",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: Remote Island Lake Argyle, Remote, 6743 Australia\n\nA Senior DevOps / Infrastructure Engineer in this role is responsible for building, optimizing, and maintaining a high‑performance, secure, and globally distributed infrastructure. The position requires deep expertise in Linux systems, networking, monitoring, VPN technologies, and traffic‑evasion techniques used in modern privacy‑focused environments.About the RoleYou will design and operate mission‑critical infrastructure that supports large‑scale, high‑load systems. The work goes far beyond container management: it involves k",
+    "remote": true,
+    "date_scraped": "2026-08-20"
+  },
+  {
+    "title": "Revenuecat: Senior DevOps / DevEx Engineer",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/revenuecat-senior-devops-devex-engineer",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: APAC\n\nRevenueCat removes the headaches of building and scaling in‑app subscriptions. Since graduating from YC’s S18 batch we’ve grown into the default monetization platform for mobile: we’re in >40% of newly shipped subscription apps, we process $10B+ in annual purchase volume, and we help everyone from a solo dev in Brazil to the OpenAI mobile team understand and grow their revenue.We’re a remote‑first crew of 120+, spread across 25 countries, and guided by values we actually practice: Customer Obsession, Always Be Shipping, Own It, and Balance. If you want your work to touch ",
+    "remote": true,
+    "date_scraped": "2026-08-20"
+  },
+  {
+    "title": "Sedona Digital: Senior Platform Engineer(DevOps)",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/sedona-digital-senior-platform-engineer-devops",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: Romania\n\nJoin Sedona Digital, a fast-growing scale-up organization with an ambition to be recognized as one of the leading technology companies servicing high tech, global enterprises across Technology, Finance, and Life Sciences sectors. Our global client base needs builders: engineers and developers who love technology, have deep expertise in software, engineering, and cloud technologies, and importantly, have a passion for culture and customers.  We obsess about our customers  We build outstanding technical solutions We create an awesome culture  We accelerate learning and c",
+    "remote": true,
+    "date_scraped": "2026-08-20"
+  },
+  {
+    "title": "Tenchi Security: DevOps Engineer",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/tenchi-security-devops-engineer",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: Brazil\n\nOur CompanyTenchi is a Cyber Security company building innovative technology focused on Third-Party Cyber Risk Management for businesses. Founded by serial entrepreneurs and supported by solid institutional investors, we are driven to disrupt this fast-growing industry.Tenchi was created to tackle a real challenge: companies often face security risks because their third-parties don’t maintain the same level of cyber protection. This gap leaves even the largest organizations potentially vulnerable to incidents they can’t directly control. That’s exactly where we step in.",
+    "remote": true,
+    "date_scraped": "2026-08-20"
+  },
+  {
+    "title": "Truv: Senior DevOps Engineer",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/truv-senior-devops-engineer",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: Remote / Miami / New York / San Francisco\n\nAbout Truv Truv is transforming the financial data industry with a secure and real-time API platform for payroll account access. Our technology streamlines income and employment verification, direct deposit switching, and more, eliminating outdated processes and unlocking greater financial opportunities. Backed by $30M from top investors like Kleiner Perkins and NYCA, we're disrupting a $2B legacy market with cutting-edge innovation and a customer-first approach. Our leadership team brings expertise from industry giants like Apple, Car",
+    "remote": true,
+    "date_scraped": "2026-08-20"
+  },
+  {
+    "title": "Coin Market Cap: DevOps Engineer - Contractor",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/coin-market-cap-devops-engineer-contractor",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: Global / Taipei / Kuala Lumpur / Penang\n\nResponsibilities:1. Cloud Infrastructure Design & Operations: Design, build, and optimize highly available and secure cloud architectures on AWS.2. CI/CD Pipeline Development: Design and maintain end-to-end pipelines from code commit to deployment — including build, test, artifact management, release, and rollback — to improve release frequency and quality.3. Operations Automation: Reduce manual toil through programming and automation tools (e.g., Ansible, Terraform, custom scripts/platforms) to automate configuration management, change ",
+    "remote": true,
+    "date_scraped": "2026-08-20"
   }
 ]
