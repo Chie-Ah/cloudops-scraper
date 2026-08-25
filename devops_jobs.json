@@ -4378,5 +4378,17 @@
     "description": "\n\nHeadquarters: Global / Taipei / Kuala Lumpur / Penang\n\nResponsibilities:1. Cloud Infrastructure Design & Operations: Design, build, and optimize highly available and secure cloud architectures on AWS.2. CI/CD Pipeline Development: Design and maintain end-to-end pipelines from code commit to deployment — including build, test, artifact management, release, and rollback — to improve release frequency and quality.3. Operations Automation: Reduce manual toil through programming and automation tools (e.g., Ansible, Terraform, custom scripts/platforms) to automate configuration management, change ",
     "remote": true,
     "date_scraped": "2026-08-20"
+  },
+  {
+    "title": "Lemon.io: Senior DevOps Engineer",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/lemon-io-senior-devops-engineer-3",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: New York, NY\n    URL: https://lemon.io\n\nSenior Developer? Work Remote. Get Paid Well. Build What Matters.\nLemon.io connects hand-picked senior developers with vetted startups across the US and Europe — no bidding wars, no ghosting, just serious opportunities.\nWe're currently hiring for a research-driven AI company on a mission to slash the cost of modern AI — co-designing hardware, software, algorithms, and models to make AI's benefits accessible to everyone. They're active open-source contributors, building the infrastructure behind next-generation AI at scale.\nOpen roles:\n\nSe",
+    "remote": true,
+    "date_scraped": "2026-08-25"
   }
 ]
