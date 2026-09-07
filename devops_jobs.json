@@ -4402,5 +4402,17 @@
     "description": "\n\nHeadquarters: Bellevue, WA or Remote Florida\n\nTeam Charter:\nThe Cloud Engineering team is dedicated to maintaining and evolving cloud infrastructure, CI/CD pipelines, Application Security, Change Management, and Backend application golden templates. We are the backbone of the technical organization, ensuring the foundation of our services is robust, secure, and efficient.\nAbout the role:\nWe are looking for a Senior Cloud Engineer to join our Cloud Engineering team. This team is tasked with ensuring scalability, reliability, and security for all backend services and keeping the SDLC running s",
     "remote": true,
     "date_scraped": "2026-08-27"
+  },
+  {
+    "title": "Fastly: Senior SRE - Networks",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/fastly-senior-sre-networks",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: United Kingdom (Remote)\n\nFastly helps people stay better connected with the things they love. Fastly’s edge cloud platform enables customers to create great digital experiences quickly, securely, and reliably by processing, serving, and securing our customers’ applications as close to their end-users as possible — at the edge of the Internet. The platform is designed to take advantage of the modern internet, to be programmable, and to support agile software development. Fastly’s customers include many of the world’s most prominent companies, including GitHub, Yelp, Paramount, a",
+    "remote": true,
+    "date_scraped": "2026-09-07"
   }
 ]
