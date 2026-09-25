@@ -9286,5 +9286,17 @@
     "description": "\n\nHeadquarters: SF, NYC, or Remote (US)\n\nAbout the role\nWe are looking for an experienced Cloud Security Engineer to join Hex’s security team. You will be responsible for ensuring the security and resilience of our cloud infrastructure, providing leadership in cloud security practices, and collaborating closely with our infrastructure and engineering teams to secure our cloud-native applications.\n\nAbout the role:\n\nDesign, implement, and manage security solutions and controls for AWS environments and Kubernetes clusters, including appropriate isolation/sandboxing methods for Hex’s RCE-as-a-Serv",
     "remote": true,
     "date_scraped": "2026-09-19"
+  },
+  {
+    "title": "thehivecareers.co: DevOps Engineer (Remote)",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/thehivecareers-co-devops-engineer-remote",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: Bridgetown, Saint Michael, Barbados\n    URL: http://thehivecareers.co\n\n\n\nJob brief\nThe ideal candidate will guide DevOps teams on speed of delivery, improving quality/security of code, and optimizing processes.\nJob Level: Full-Time/Remote\nLocation: Barbados\nKey Responsibilities\nMentors and coaches the technical team.Constantly looking for better ways of solving technical problems anddesigning the solution, not afraid of challenging the status quo.Provides the team a roadmap for implementing software engineering practices for higher code quality Identifies bottlenecks in coding ",
+    "remote": true,
+    "date_scraped": "2026-09-25"
   }
 ]
