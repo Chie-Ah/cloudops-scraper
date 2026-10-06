@@ -9334,5 +9334,29 @@
     "description": "\n\nHeadquarters: Remote - United States\n\nAbout Vercel:\nVercel is the agentic infrastructure company, freeing people and agents to ship what's next. For more than a decade we've helped builders move from idea to production with speed, security, and exceptional developer experience.\nNow we're scaling our products for both agents and people to ship and run software, built in the open and trusted by OpenAI, PayPal, Ramp, Supreme, and millions of developers worldwide.About the role:\nWe're looking for a Security Engineer to join our Cloud Security Engineering team. In this role, you'll help strengthe",
     "remote": true,
     "date_scraped": "2026-10-03"
+  },
+  {
+    "title": "LaunchDarkly: Engineering Manager, Cloud Engineering",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/launchdarkly-engineering-manager-cloud-engineering",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: Remote - US\n\nAbout the Job:\nWe’re looking for an Engineering Manager to lead LaunchDarkly’s Cloud Engineering team, the team responsible for the foundational infrastructure our products and engineering teams depend on.\nCloud Engineering owns LaunchDarkly’s AWS accounts and networking, multi-region Kubernetes infrastructure, Terraform and GitOps workflows, CockroachDB operations, disaster-recovery capabilities, and FedRAMP infrastructure posture. The team is small, senior, and recently rebuilt. This is a frontline leadership role for a manager who treats operational health as a ",
+    "remote": true,
+    "date_scraped": "2026-10-06"
+  },
+  {
+    "title": "Webflow: Senior Infrastructure Engineer",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/webflow-senior-infrastructure-engineer",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: Argentina Remote\n\nWebflow is the agentic web marketing platform for modern marketing teams, helping organizations build, manage, and optimize high-performing web experiences that drive predictable growth and strengthen brand trust. Building at Webflow will need grit, because we move fast, without ever sacrificing craft or quality.\nAbout the Role\nWe’re looking for a Senior Infrastructure Engineer to improve reliability and stability of Webflow’s customer-facing, production infrastructure, serving millions of page views per hour. Our product is used by over 2 million users world-",
+    "remote": true,
+    "date_scraped": "2026-10-06"
   }
 ]
