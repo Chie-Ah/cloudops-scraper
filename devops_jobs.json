@@ -12442,5 +12442,29 @@
     "description": "This a Full Remote job, the offer is available from: Europe, European Union, EMEA, Germany\nRemote in our day-to-day work. On-site when it matters.\nWe work remote by default – focused, efficient, and with full ownership. For larger features, architectural decisions, and real brainstorming sessions, we come together in Berlin – fast, hands-on, and without unnecessary meeting overhead.\nWe use AI to accelerate – not to replace thinking.\nWe design the system, steer the output, and take responsibility for what we ship.\nFast where it makes sense. Careful where it matters.\nBaue die Plattform, auf der ",
     "remote": true,
     "date_scraped": "2026-10-19"
+  },
+  {
+    "title": "Discord: QA/DevOps Engineer",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/discord-qa-devops-engineer",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: San Francisco Bay Area or Remote (U.S.)\n\nDiscord has a highly engaged community of millions of daily active users who use the platform for many different reasons, but there’s one thing that nearly everyone does: play video games. Discord plays a uniquely important role in the future of gaming, and we are focused on making it easier and more fun for people to hang out before, during, and after playing games.We are seeking a QA/DevOps Engineer to join Discord’s Business Systems team. In this role, you will own automated test suite development and maintenance across Oracle ERP Clo",
+    "remote": true,
+    "date_scraped": "2026-10-23"
+  },
+  {
+    "title": "Toptal: Senior Deployment Engineer with LLM and GPU Infrastructure experience",
+    "company": "",
+    "location": "Emea Only",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/toptal-senior-deployment-engineer-with-llm-and-gpu-infrastructure-experience",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters:\n\nSummaryWe are seeking an Infrastructure Engineer for Air-gapped LLM Deployments to support secure, large-scale software deployments in GPU-based environments. The role focuses on deploying LLM workloads in air-gapped settings and establishing observability with Grafana and Prometheus, with onsite presence in Riyadh required for two weeks per month.General informationThey need a senior engineer who can take ownership of complex deployments across isolated or air-gapped environments. The role will involve working with GPU infrastructure for LLM workloads and ensuring systems can",
+    "remote": true,
+    "date_scraped": "2026-10-23"
   }
 ]
