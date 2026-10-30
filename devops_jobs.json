@@ -12466,5 +12466,41 @@
     "description": "\n\nHeadquarters:\n\nSummaryWe are seeking an Infrastructure Engineer for Air-gapped LLM Deployments to support secure, large-scale software deployments in GPU-based environments. The role focuses on deploying LLM workloads in air-gapped settings and establishing observability with Grafana and Prometheus, with onsite presence in Riyadh required for two weeks per month.General informationThey need a senior engineer who can take ownership of complex deployments across isolated or air-gapped environments. The role will involve working with GPU infrastructure for LLM workloads and ensuring systems can",
     "remote": true,
     "date_scraped": "2026-10-23"
+  },
+  {
+    "title": "Wrike: CloudOps Engineer (Network Engineer)",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/wrike-cloudops-engineer-network-engineer",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: Cyprus - Remote\n\nWrike is the most powerful work management platform. Built for teams and organizations looking to collaborate, create, and exceed every day, Wrike brings everyone and all work into a single place to remove complexity, increase productivity, and free people up to focus on their most purposeful work.\n \nWrike is our people, not a place. As a distributed team, we own our growth, stay globally connected, and rely on the product we build to deliver impactful work alongside brilliant minds. You'll have real ownership over meaningful work, a global team that has your b",
+    "remote": true,
+    "date_scraped": "2026-10-30"
+  },
+  {
+    "title": "Smartsheet: DevOps Engineer, Edge and Developer Experience (Remote Eligible in Bulgaria)",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/smartsheet-devops-engineer-edge-and-developer-experience-remote-eligible-in-bulgaria",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters:  -REMOTE, BULGARIA-\n\nFor over 20 years, Smartsheet has empowered teams to manage work seamlessly and scale solutions smarter. Now, in our most ambitious chapter yet, we are uniting human teams with AI agents. By orchestrating the work agents do best, automating manual tasks and uncovering insights at scale, we create the space for people to focus on what truly matters: judgment, creativity, and big thinking. That is magic at work, and it’s what we show up for every day.We are seeking a DevOps Engineer II to join the Edge and Developer Experience team. Our team collaboratively o",
+    "remote": true,
+    "date_scraped": "2026-10-30"
+  },
+  {
+    "title": "Bitovi: Backend / Platform Developer Consultant (Temporal & Kubernetes)",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/bitovi-backend-platform-developer-consultant-temporal-kubernetes",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: United States\n    URL: https://bitovi.com\n\nJOIN OUR TEAM!\nBitovi is looking for a Backend / Platform Developer Consultant to join us as we transform technology delivery. We build and operate durable, distributed systems for enterprise clients — heavy on Java Services, Temporal for workflow orchestration, Kafka for event streaming, and Kubernetes-native platform engineering on AWS to run it all reliably. If you want to build exceptional systems, take orchestration, systems engineering, and infrastructure seriously, and have ideas for making delivery more collaborative, validatio",
+    "remote": true,
+    "date_scraped": "2026-10-30"
   }
 ]
