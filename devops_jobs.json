@@ -12502,5 +12502,17 @@
     "description": "\n\nHeadquarters: United States\n    URL: https://bitovi.com\n\nJOIN OUR TEAM!\nBitovi is looking for a Backend / Platform Developer Consultant to join us as we transform technology delivery. We build and operate durable, distributed systems for enterprise clients — heavy on Java Services, Temporal for workflow orchestration, Kafka for event streaming, and Kubernetes-native platform engineering on AWS to run it all reliably. If you want to build exceptional systems, take orchestration, systems engineering, and infrastructure seriously, and have ideas for making delivery more collaborative, validatio",
     "remote": true,
     "date_scraped": "2026-10-30"
+  },
+  {
+    "title": "Descript: Software Engineer, Infrastructure",
+    "company": "",
+    "location": "Anywhere In The World",
+    "salary": "Not specified",
+    "url": "https://weworkremotely.com/remote-jobs/descript-software-engineer-infrastructure",
+    "company_url": "",
+    "source": "weworkremotely",
+    "description": "\n\nHeadquarters: San Francisco, CA or Remote, US\n\nPlatform owns the foundation the company runs on: compute and deployment, reliability and on-call, CI/CD and monorepo health, developer environments, the infrastructure that model training and inference run on, and the security boundaries around all of it.\nAI and agent tooling is the clearest example. You will contribute to how models are trained and served here, as well as how agents work inside our codebase: the environments they run in, the verification that makes their output trustworthy, and the review paths that keep it all legible. There ",
+    "remote": true,
+    "date_scraped": "2026-11-02"
   }
 ]
